@@ -118,6 +118,7 @@ internal class MessageServiceTest {
         val mockMessageWithRandomID = Message(mockMessageText, "randomID")
         Mockito.`when`(mockDb.save(Message(mockMessageText))).thenReturn(mockMessageWithRandomID)
 
+
         // act
         val actual = mockService.save(mockMessageWithoutID)
 
