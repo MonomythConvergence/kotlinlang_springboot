@@ -13,7 +13,7 @@ import java.net.URI
 @RequestMapping("/")
 class MessageController(private val service: MessageService) {
     @GetMapping
-    fun listMessages() = ResponseEntity.ok(service.findMessages())
+    fun listMessages(): ResponseEntity<List<Message>> = ResponseEntity.ok(service.findMessages())
 
     @PostMapping
     fun post(@RequestBody message: Message): ResponseEntity<Message> {
